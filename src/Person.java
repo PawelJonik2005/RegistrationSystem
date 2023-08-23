@@ -27,14 +27,14 @@ public class Person {
 
     public void setPassword(String password) {
         do {
-            if (password.length() <= 2) {
+            if (password.length() <8) {
                 System.out.println("Twoje haslo jest za krótkie, spróbuj ponownie: ");
                 password = scanner.nextLine();
                 setName(password);
             } else {
                 this.password = password;
             }
-        }while (password.length() <=8);
+        }while (password.length() <8);
     }
 
     public String getName() {
