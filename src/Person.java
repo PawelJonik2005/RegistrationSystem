@@ -26,15 +26,12 @@ public class Person {
     }
 
     public void setPassword(String password) {
-        do {
-            if (password.length() <8) {
-                System.out.println("Twoje haslo jest za krótkie, spróbuj ponownie: ");
-                password = scanner.nextLine();
-                setName(password);
-            } else {
-                this.password = password;
-            }
-        }while (password.length() <8);
+        Scanner scanner = new Scanner(System.in);
+        while (password.length() < 8) {
+            System.out.println("Twoje haslo jest za krótkie, spróbuj ponownie: ");
+            password = scanner.nextLine();
+        }
+        this.password = password;
     }
 
     public String getName() {
@@ -42,30 +39,24 @@ public class Person {
     }
     Scanner scanner = new Scanner(System.in);
     public void setName(String name) {
-        do {
-        if (name.length() <= 2) {
+        Scanner scanner = new Scanner(System.in);
+        while (name.length() <= 2) {
             System.out.println("Podaj prawidłowe imię: ");
             name = scanner.nextLine();
-            setName(name);
-        } else {
-            this.name = name;
         }
-        }while (name.length() <= 2);
+        this.name = name;
     }
 
         public String getSurname() {
             return surname;
         }
 
-        public void setSurname(String surname) {
-            do {
-                if (surname.length() <= 2) {
-                    System.out.println("Podaj prawidłowe nazwisko: ");
-                    surname = scanner.nextLine();
-                    setSurname(surname);
-                } else {
-                    this.surname = surname;
-                }
-            }while (surname.length() <= 2);
+    public void setSurname(String surname) {
+        Scanner scanner = new Scanner(System.in);
+        while (surname.length() <= 2) {
+            System.out.println("Podaj prawidłowe nazwisko: ");
+            surname = scanner.nextLine();
         }
+        this.surname = surname;
+    }
     }
